@@ -13,9 +13,18 @@ struct ContentView: View {
     // MARK: - Body
     var body: some View {
         Map {
-            Marker("Coffee", coordinate: .coffee)
-            Marker("Gaetano's", coordinate: .restaurant)
+            Annotation("Coffee", coordinate: .coffee) {
+                Image(systemName: "cup.and.saucer.fill")
+                    .font(.largeTitle)
+                    
+            }
+            
+            Annotation("Geatano's", coordinate: .restaurant) {
+                Image(systemName: "fork.knife.circle.fill")
+                    .font(.largeTitle)
+            }
         }
+        
     }
 }
 
