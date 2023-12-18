@@ -12,6 +12,7 @@
 		4D3DED312B30AB98008F67FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DED302B30AB98008F67FD /* Assets.xcassets */; };
 		4D3DED342B30AB98008F67FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DED332B30AB98008F67FD /* Preview Assets.xcassets */; };
 		4D3DED3C2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DED3B2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift */; };
+		4D3DED3F2B30C17C008F67FD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DED3E2B30C17C008F67FD /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		4D3DED302B30AB98008F67FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D3DED332B30AB98008F67FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D3DED3B2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinates2D+Extensions.swift"; sourceTree = "<group>"; };
+		4D3DED3E2B30C17C008F67FD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		4D3DED2B2B30AB96008F67FD /* HelloMaps */ = {
 			isa = PBXGroup;
 			children = (
+				4D3DED3D2B30C169008F67FD /* Helpers */,
 				4D3DED3A2B30BB66008F67FD /* Extensions */,
 				4D3DED2C2B30AB96008F67FD /* HelloMapsApp.swift */,
 				4D3DED2E2B30AB96008F67FD /* ContentView.swift */,
@@ -76,6 +79,14 @@
 				4D3DED3B2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D3DED3D2B30C169008F67FD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4D3DED3E2B30C17C008F67FD /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 				4D3DED2F2B30AB96008F67FD /* ContentView.swift in Sources */,
 				4D3DED2D2B30AB96008F67FD /* HelloMapsApp.swift in Sources */,
 				4D3DED3C2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift in Sources */,
+				4D3DED3F2B30C17C008F67FD /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
