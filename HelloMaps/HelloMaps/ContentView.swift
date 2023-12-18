@@ -13,7 +13,8 @@ struct ContentView: View {
     // MARK: - Body
     var body: some View {
         Map {
-            Marker(coordinate: <#T##CLLocationCoordinate2D#>, label: Text("Coffee"))
+            Marker("Coffee", coordinate: .coffee)
+            Marker("Gaetano's", coordinate: .restaurant)
         }
     }
 }
