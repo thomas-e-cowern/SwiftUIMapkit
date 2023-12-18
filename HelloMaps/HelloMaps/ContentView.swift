@@ -11,6 +11,7 @@ import MapKit
 struct ContentView: View {
     
     // MARK: - Properties
+    private var locationManager = LocationManager.shared
     @State private var selectedMapOption: MapOptions = .standard
     
     // MARK: - Body
@@ -27,6 +28,8 @@ struct ContentView: View {
                     Image(systemName: "fork.knife.circle.fill")
                         .font(.largeTitle)
                 }
+                
+                UserAnnotation()
             }
             .mapStyle(selectedMapOption.mapStyle)
             
