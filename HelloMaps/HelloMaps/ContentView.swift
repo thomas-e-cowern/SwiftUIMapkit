@@ -34,7 +34,9 @@ struct ContentView: View {
             }
             .mapStyle(selectedMapOption.mapStyle)
             .onChange(of: locationManager.region) { oldValue, newValue in
-                <#code#>
+                withAnimation {
+                    postion = .region(locationManager.region)
+                }
             }
             
             Picker("Map Style", selection: $selectedMapOption) {
