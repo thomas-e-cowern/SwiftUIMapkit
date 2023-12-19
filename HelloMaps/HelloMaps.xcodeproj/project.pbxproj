@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D20DB502B31EFDF0022A91D /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20DB4F2B31EFDF0022A91D /* MKCoordinateRegion+Extensions.swift */; };
 		4D3DED2D2B30AB96008F67FD /* HelloMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DED2C2B30AB96008F67FD /* HelloMapsApp.swift */; };
 		4D3DED2F2B30AB96008F67FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DED2E2B30AB96008F67FD /* ContentView.swift */; };
 		4D3DED312B30AB98008F67FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DED302B30AB98008F67FD /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D20DB4F2B31EFDF0022A91D /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		4D3DED292B30AB96008F67FD /* HelloMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3DED2C2B30AB96008F67FD /* HelloMapsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMapsApp.swift; sourceTree = "<group>"; };
 		4D3DED2E2B30AB96008F67FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				4D3DED3B2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift */,
+				4D20DB4F2B31EFDF0022A91D /* MKCoordinateRegion+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3DED2F2B30AB96008F67FD /* ContentView.swift in Sources */,
+				4D20DB502B31EFDF0022A91D /* MKCoordinateRegion+Extensions.swift in Sources */,
 				4D3DED2D2B30AB96008F67FD /* HelloMapsApp.swift in Sources */,
 				4D3DED422B30CA67008F67FD /* LocationManager.swift in Sources */,
 				4D3DED3C2B30BB91008F67FD /* CLLocationCoordinates2D+Extensions.swift in Sources */,

@@ -11,13 +11,14 @@ import MapKit
 struct ContentView: View {
     
     // MARK: - Properties
-    private var locationManager = LocationManager.shared
+    @State private var postion: MapCameraPosition = .userLocation(fallback: .automatic)
+    @StateObject private var locationManager = LocationManager.shared
     @State private var selectedMapOption: MapOptions = .standard
     
     // MARK: - Body
     var body: some View {
         ZStack (alignment: .top) {
-            Map {
+            Map(position: $postion) {
                 Annotation("Coffee", coordinate: .coffee) {
                     Image(systemName: "cup.and.saucer.fill")
                         .font(.largeTitle)
@@ -32,6 +33,9 @@ struct ContentView: View {
                 UserAnnotation()
             }
             .mapStyle(selectedMapOption.mapStyle)
+            .onChange(of: locationManager.region) { oldValue, newValue in
+                <#code#>
+            }
             
             Picker("Map Style", selection: $selectedMapOption) {
                 ForEach(MapOptions.allCases) { mapOption in
