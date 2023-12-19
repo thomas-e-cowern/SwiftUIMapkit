@@ -32,6 +32,11 @@ struct ContentView: View {
                 
                 UserAnnotation()
             }
+            .mapControls({
+                MapUserLocationButton()
+                MapCompass()
+                MapScaleView()
+            })
             .mapStyle(selectedMapOption.mapStyle)
             .onChange(of: locationManager.region) { oldValue, newValue in
                 withAnimation {
@@ -39,14 +44,14 @@ struct ContentView: View {
                 }
             }
             
-            Picker("Map Style", selection: $selectedMapOption) {
-                ForEach(MapOptions.allCases) { mapOption in
-                    Text(mapOption.rawValue.capitalized).tag(mapOption)
-                }
-            }
-            .pickerStyle(.segmented)
-            .background(Color.white)
-            .padding()
+//            Picker("Map Style", selection: $selectedMapOption) {
+//                ForEach(MapOptions.allCases) { mapOption in
+//                    Text(mapOption.rawValue.capitalized).tag(mapOption)
+//                }
+//            }
+//            .pickerStyle(.segmented)
+//            .background(Color.white)
+//            .padding([.top], 60)
             
             VStack {
                 Spacer()
