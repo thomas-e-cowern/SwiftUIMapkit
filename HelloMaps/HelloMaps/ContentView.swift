@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 
                 UserAnnotation()
-            }
+            } // MARK: End of Map
             .mapControls({
                 MapUserLocationButton()
                 MapCompass()
