@@ -17,11 +17,22 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         super.init()
         self.manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        if self.manager.authorizationStatus == .notDetermined {
-            self.manager.requestWhenInUseAuthorization()
-            self.manager.requestLocation()
-        } else if self.manager.authorizationStatus == .authorizedWhenInUse || self.manager.authorizationStatus == .authorizedAlways {
-            self.manager.requestLocation()
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedAlways:
+            manager.requestLocation()
+        case .authorizedWhenInUse:
+            manager.requestLocation()
+        case .denied:
+            print("Denied")
+        case .restricted:
+            print("Restricted")
+        @unknown default:
+            break
         }
     }
     
