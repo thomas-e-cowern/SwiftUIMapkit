@@ -20,6 +20,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         if self.manager.authorizationStatus == .notDetermined {
             self.manager.requestWhenInUseAuthorization()
             self.manager.requestLocation()
+        } else if self.manager.authorizationStatus == .authorizedWhenInUse || self.manager.authorizationStatus == .authorizedAlways {
+            self.manager.requestLocation()
         }
     }
     

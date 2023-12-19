@@ -48,6 +48,26 @@ struct ContentView: View {
             .background(Color.white)
             .padding()
             
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Button("Coffee") {
+                        withAnimation {
+                            postion = .region(.coffee)
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                    
+                    Button("Restaurant") {
+                        withAnimation {
+                            postion = .region(.restuarant)
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            }
+            
         } //: End of ZStack
     }
 }
