@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D07B1182B3354CD00CAE844 /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D07B1172B3354CD00CAE844 /* MapUtilities.swift */; };
 		4DAD7E642B33242A007B1359 /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E632B33242A007B1359 /* NearMeApp.swift */; };
 		4DAD7E662B33242A007B1359 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E652B33242A007B1359 /* ContentView.swift */; };
 		4DAD7E682B33242E007B1359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD7E672B33242E007B1359 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D07B1172B3354CD00CAE844 /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		4DAD7E602B33242A007B1359 /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAD7E632B33242A007B1359 /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
 		4DAD7E652B33242A007B1359 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D07B1162B3354B700CAE844 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D07B1172B3354CD00CAE844 /* MapUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		4DAD7E572B332429007B1359 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +65,7 @@
 		4DAD7E622B33242A007B1359 /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				4D07B1162B3354B700CAE844 /* Utilities */,
 				4DAD7E742B33404D007B1359 /* Extensions */,
 				4DAD7E712B3332AF007B1359 /* Managers */,
 				4DAD7E632B33242A007B1359 /* NearMeApp.swift */,
@@ -162,6 +173,7 @@
 				4DAD7E662B33242A007B1359 /* ContentView.swift in Sources */,
 				4DAD7E762B334063007B1359 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				4DAD7E642B33242A007B1359 /* NearMeApp.swift in Sources */,
+				4D07B1182B3354CD00CAE844 /* MapUtilities.swift in Sources */,
 				4DAD7E732B3332C8007B1359 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
