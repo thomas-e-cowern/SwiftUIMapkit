@@ -40,6 +40,11 @@ struct ContentView: View {
                             // Will initiate search
                             isSearching = true
                         }
+                    
+                    List(mapItems, id: \.self) { mapItem in
+                        Text(mapItem.name ?? "")
+                        Text(mapItem.phoneNumber ?? "")
+                    }
                 }
                 .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
                 .presentationDragIndicator(.visible)
