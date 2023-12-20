@@ -12,6 +12,7 @@
 		4DAD7E682B33242E007B1359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD7E672B33242E007B1359 /* Assets.xcassets */; };
 		4DAD7E6B2B33242E007B1359 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD7E6A2B33242E007B1359 /* Preview Assets.xcassets */; };
 		4DAD7E732B3332C8007B1359 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E722B3332C8007B1359 /* LocationManager.swift */; };
+		4DAD7E762B334063007B1359 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E752B334063007B1359 /* MKCoordinateRegion+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		4DAD7E672B33242E007B1359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DAD7E6A2B33242E007B1359 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DAD7E722B3332C8007B1359 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4DAD7E752B334063007B1359 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		4DAD7E622B33242A007B1359 /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				4DAD7E742B33404D007B1359 /* Extensions */,
 				4DAD7E712B3332AF007B1359 /* Managers */,
 				4DAD7E632B33242A007B1359 /* NearMeApp.swift */,
 				4DAD7E652B33242A007B1359 /* ContentView.swift */,
@@ -76,6 +79,14 @@
 				4DAD7E722B3332C8007B1359 /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		4DAD7E742B33404D007B1359 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DAD7E752B334063007B1359 /* MKCoordinateRegion+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DAD7E662B33242A007B1359 /* ContentView.swift in Sources */,
+				4DAD7E762B334063007B1359 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				4DAD7E642B33242A007B1359 /* NearMeApp.swift in Sources */,
 				4DAD7E732B3332C8007B1359 /* LocationManager.swift in Sources */,
 			);
@@ -287,6 +299,7 @@
 				DEVELOPMENT_TEAM = 56F54J4H3N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NearMe needs your location to work correctly!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +329,7 @@
 				DEVELOPMENT_TEAM = 56F54J4H3N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NearMe needs your location to work correctly!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

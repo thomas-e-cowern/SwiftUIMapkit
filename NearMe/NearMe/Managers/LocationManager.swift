@@ -40,6 +40,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
     static let shared = LocationManager()
+    var error: LocationError? = nil
     
     var region: MKCoordinateRegion = MKCoordinateRegion()
     
@@ -63,9 +64,9 @@ extension LocationManager {
         case .authorizedAlways, .authorizedWhenInUse:
             manager.requestLocation()
         case .denied:
-            print("Denied")
+            error = .authorizationDenied
         case .restricted:
-            print("Restricted")
+            error = .authorizationRestricted
         default:
             break
         }
@@ -73,5 +74,18 @@ extension LocationManager {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
+        
+        if let clError = error as? CLError {
+            switch clError.code {
+            case .locationUnknown:
+                self.error = .unknownLocation
+            case .denied:
+                self.error = .accessDenied
+            case .network:
+                self.error = .network
+            default:
+                self.error = .operationFailed
+            }
+        }
     }
 }

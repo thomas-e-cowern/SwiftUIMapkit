@@ -13,24 +13,31 @@ struct ContentView: View {
     // MARK: - Properties
     @State private var query: String = ""
     @State private var selectedDetent: PresentationDetent = .fraction(0.15)
+    @State private var locationManager = LocationManager.shared
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     
     // MARK: - Body
     var body: some View {
         ZStack {
-            Map()
-                .sheet(isPresented: .constant(true), content: {
-                    VStack {
-                        TextField("Search", text: $query)
-                            .textFieldStyle(.roundedBorder)
-                            .padding()
-                            .onSubmit {
-                                // Will initial search
-                            }
-                    }
-                    .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
-                    .presentationDragIndicator(.visible)
-                    .interactiveDismissDisabled()
-                    .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+            Map {
+                UserAnnotation()
+            }
+            .onChange(of: locationManager.region, {
+                <#code#>
+            })
+            .sheet(isPresented: .constant(true), content: {
+                VStack {
+                    TextField("Search", text: $query)
+                        .textFieldStyle(.roundedBorder)
+                        .padding()
+                        .onSubmit {
+                            // Will initiate search
+                        }
+                }
+                .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
+                .presentationDragIndicator(.visible)
+                .interactiveDismissDisabled()
+                .presentationBackgroundInteraction(.enabled(upThrough: .medium))
             })
         }
     }
