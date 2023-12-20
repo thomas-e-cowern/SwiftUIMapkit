@@ -19,11 +19,11 @@ struct ContentView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Map {
+            Map(position: $position) {
                 UserAnnotation()
             }
             .onChange(of: locationManager.region, {
-                <#code#>
+                position = .region(locationManager.region)
             })
             .sheet(isPresented: .constant(true), content: {
                 VStack {
