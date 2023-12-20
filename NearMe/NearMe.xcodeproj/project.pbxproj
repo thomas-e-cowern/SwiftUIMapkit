@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D07B1182B3354CD00CAE844 /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D07B1172B3354CD00CAE844 /* MapUtilities.swift */; };
 		4D07B11D2B33741D00CAE844 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D07B11C2B33741D00CAE844 /* PlaceView.swift */; };
+		4D07B11F2B3376BD00CAE844 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D07B11E2B3376BD00CAE844 /* PreviewData.swift */; };
 		4DAD7E642B33242A007B1359 /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E632B33242A007B1359 /* NearMeApp.swift */; };
 		4DAD7E662B33242A007B1359 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E652B33242A007B1359 /* ContentView.swift */; };
 		4DAD7E682B33242E007B1359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD7E672B33242E007B1359 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4D07B1172B3354CD00CAE844 /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		4D07B11C2B33741D00CAE844 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		4D07B11E2B3376BD00CAE844 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		4DAD7E602B33242A007B1359 /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAD7E632B33242A007B1359 /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
 		4DAD7E652B33242A007B1359 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				4DAD7E6A2B33242E007B1359 /* Preview Assets.xcassets */,
+				4D07B11E2B3376BD00CAE844 /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				4DAD7E662B33242A007B1359 /* ContentView.swift in Sources */,
 				4DAD7E762B334063007B1359 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				4DAD7E642B33242A007B1359 /* NearMeApp.swift in Sources */,
+				4D07B11F2B3376BD00CAE844 /* PreviewData.swift in Sources */,
 				4D07B1182B3354CD00CAE844 /* MapUtilities.swift in Sources */,
 				4DAD7E732B3332C8007B1359 /* LocationManager.swift in Sources */,
 			);

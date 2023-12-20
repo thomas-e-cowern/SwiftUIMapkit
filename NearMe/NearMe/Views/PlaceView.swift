@@ -21,7 +21,7 @@ struct PlaceView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
+        VStack (alignment: .leading) {
             Text(mapItem.name ?? "")
                 .font(.title3)
             Text(address)

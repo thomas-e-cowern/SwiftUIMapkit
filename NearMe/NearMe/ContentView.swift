@@ -42,8 +42,7 @@ struct ContentView: View {
                         }
                     
                     List(mapItems, id: \.self) { mapItem in
-                        Text(mapItem.name ?? "")
-                        Text(mapItem.phoneNumber ?? "")
+                        PlaceView(mapItem: mapItem)
                     }
                 }
                 .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
