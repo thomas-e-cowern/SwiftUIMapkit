@@ -19,6 +19,14 @@ struct PlaceView: View {
         return "\(placemark.thoroughfare ?? "") \(placemark.subThoroughfare ?? "") \(placemark.locality ?? "") \(placemark.administrativeArea ?? "") \(placemark.postalCode ?? "")"
     }
     
+    private var distance: Measurement<UnitLength>? {
+        guard let userLocation = LocationManager.shared.manager.location, let destinationLocation = mapItem.placemark.location else {
+            return nil
+        }
+        
+        return calculateDistance(from: userLocation, to: destinationLocation)
+    }
+    
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading) {
@@ -26,6 +34,9 @@ struct PlaceView: View {
                 .font(.title3)
             Text(address)
                 .frame(maxWidth: .infinity, alignment: .leading)
+            if let distance {
+                Text(distance, formatter: MeasurementFormatter.distance)
+            }
         }
         
     }
