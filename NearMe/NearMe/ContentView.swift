@@ -39,7 +39,7 @@ struct ContentView: View {
                     switch displayMode {
                     case .list:
                         SearchBarView(search: $query, isSearching: $isSearching)
-                        PlaceListView(mapItems: mapItems)
+                        PlaceListView(mapItems: mapItems, selectedMapItem: $selectedMapItem)
                     case .detail:
                         SelectedPlaceDetailView(mapItem: $selectedMapItem)
                             .padding()
