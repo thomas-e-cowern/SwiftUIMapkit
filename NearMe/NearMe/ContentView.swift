@@ -21,6 +21,7 @@ struct ContentView: View {
     @State private var selectedMapItem: MKMapItem?
     @State private var displayMode: DisplayMode = .list
     @State private var lookAroundScene: MKLookAroundScene?
+    @State private var route: MKRoute?
     
     // MARK: - Body
     var body: some View {
@@ -29,6 +30,12 @@ struct ContentView: View {
                 ForEach(mapItems, id: \.self) { mapItem in
                     Marker(item: mapItem)
                 }
+                
+                if let route {
+                    MapPolyline(route)
+                        .stroke(Color.blue, lineWidth: 5)
+                }
+                
                 UserAnnotation()
             }
             .onChange(of: locationManager.region, {
@@ -48,18 +55,18 @@ struct ContentView: View {
                             .task(id: selectedMapItem) {
                                 let scene = await getScene(selectedMapItem: selectedMapItem)
                                 lookAroundScene = scene
-//                                lookAroundScene = nil
-//                                if let selectedMapItem {
-//                                    let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
-//                                    do {
-//                                        lookAroundScene = try? await request.scene
-//                                        
-//                                    } catch {
-//                                        print("not available")
-//                                    }
-//                                    
-//                                    
-//                                }
+                                //                                lookAroundScene = nil
+                                //                                if let selectedMapItem {
+                                //                                    let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
+                                //                                    do {
+                                //                                        lookAroundScene = try? await request.scene
+                                //
+                                //                                    } catch {
+                                //                                        print("not available")
+                                //                                    }
+                                //
+                                //
+                                //                                }
                             }
                     }
                     
@@ -86,6 +93,12 @@ struct ContentView: View {
                 await search()
             }
         })
+        .task(id: selectedMapItem) {
+            route = nil
+            if let selectedMapItem {
+                await reqestCalculateDirections()
+            }
+        }
     }
     
     // MARK: Methods and functions
@@ -127,6 +140,17 @@ struct ContentView: View {
         //        } else {
         //            return nil
         //        }
+    }
+    
+    private func reqestCalculateDirections() async {
+        route = nil
+        if let selectedMapItem {
+            guard let currentUserLocation = locationManager.manager.location else { return }
+            let startingMapItem = MKMapItem(placemark: MKPlacemark(coordinate: currentUserLocation.coordinate))
+            
+            self.route = await calculateDirections(from: startingMapItem, to: selectedMapItem)
+            
+        }
     }
 }
 
