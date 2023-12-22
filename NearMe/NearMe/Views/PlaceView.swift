@@ -30,14 +30,51 @@ struct PlaceView: View {
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading) {
-            Text(mapItem.name ?? "")
-                .font(.title3)
-            Text(address)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            VStack (alignment: .leading) {
+                Text("Name")
+                    .font(.caption)
+                    .foregroundStyle(Color.gray)
+                Text(mapItem.name ?? "")
+                    .font(.title3)
+            }
+
+            
+            VStack (alignment: .leading) {
+                Text("Address")
+                    .font(.caption)
+                    .foregroundStyle(Color.gray)
+                Text(address)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
+            VStack {
+                if let phone = mapItem.phoneNumber {
+                    VStack (alignment: .leading) {
+                    Text("Phone")
+                        .font(.caption)
+                        .foregroundStyle(Color.gray)
+                    Text(phone)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
+            }
+
+            
             if let distance {
-                Text(distance, formatter: MeasurementFormatter.distance)
+                VStack (alignment: .leading) {
+                    Text("Distance")
+                        .font(.caption)
+                        .foregroundStyle(Color.gray)
+                    Text(distance, formatter: MeasurementFormatter.distance)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
+//        .background(Color.gray.opacity(0.2))
+        .clipShape(.rect)
+        .padding()
         
     }
 }
