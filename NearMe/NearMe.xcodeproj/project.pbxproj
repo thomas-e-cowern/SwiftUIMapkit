@@ -21,6 +21,7 @@
 		4DAD7E6B2B33242E007B1359 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD7E6A2B33242E007B1359 /* Preview Assets.xcassets */; };
 		4DAD7E732B3332C8007B1359 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E722B3332C8007B1359 /* LocationManager.swift */; };
 		4DAD7E762B334063007B1359 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD7E752B334063007B1359 /* MKCoordinateRegion+Extensions.swift */; };
+		4DDC2D042B3616000088D93C /* ActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDC2D032B3616000088D93C /* ActionButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		4DAD7E6A2B33242E007B1359 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DAD7E722B3332C8007B1359 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4DAD7E752B334063007B1359 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
+		4DDC2D032B3616000088D93C /* ActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				4D07B1222B338B3500CAE844 /* SearchBarView.swift */,
 				4D07B1242B338CD800CAE844 /* PlaceListView.swift */,
 				4D8035E12B3493C8000131FC /* SelectedPlaceDetailView.swift */,
+				4DDC2D032B3616000088D93C /* ActionButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				4D07B11F2B3376BD00CAE844 /* PreviewData.swift in Sources */,
 				4D07B1182B3354CD00CAE844 /* MapUtilities.swift in Sources */,
 				4DAD7E732B3332C8007B1359 /* LocationManager.swift in Sources */,
+				4DDC2D042B3616000088D93C /* ActionButtons.swift in Sources */,
 				4D07B1212B337DAD00CAE844 /* SearchOptionsView.swift in Sources */,
 				4D8035E02B348A1B000131FC /* MeasurementFormatter+Extensions.swift in Sources */,
 			);

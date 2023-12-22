@@ -55,6 +55,9 @@ struct ContentView: View {
                         
                         if showPreview {
                             if selectedDetent == .medium || selectedDetent == .large {
+                                if let selectedMapItem {
+                                    ActionButtons(mapItem: selectedMapItem)
+                                }
                                 LookAroundPreview(initialScene: lookAroundScene)
                                     .task(id: selectedMapItem) {
                                         if let scene = await getScene(selectedMapItem: selectedMapItem) {
