@@ -22,6 +22,7 @@ struct ContentView: View {
     @State private var displayMode: DisplayMode = .list
     @State private var lookAroundScene: MKLookAroundScene?
     @State private var route: MKRoute?
+    @State private var showPreview: Bool = true
     
     // MARK: - Body
     var body: some View {
@@ -51,26 +52,20 @@ struct ContentView: View {
                     case .detail:
                         SelectedPlaceDetailView(mapItem: $selectedMapItem)
                             .padding()
-                        LookAroundPreview(initialScene: lookAroundScene)
-                            .task(id: selectedMapItem) {
-                                let scene = await getScene(selectedMapItem: selectedMapItem)
-                                lookAroundScene = scene
-                                //                                lookAroundScene = nil
-                                //                                if let selectedMapItem {
-                                //                                    let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
-                                //                                    do {
-                                //                                        lookAroundScene = try? await request.scene
-                                //
-                                //                                    } catch {
-                                //                                        print("not available")
-                                //                                    }
-                                //
-                                //
-                                //                                }
+                        
+                        if showPreview {
+                            if selectedDetent == .medium || selectedDetent == .large {
+                                LookAroundPreview(initialScene: lookAroundScene)
+                                    .task(id: selectedMapItem) {
+                                        if let scene = await getScene(selectedMapItem: selectedMapItem) {
+                                            lookAroundScene = scene
+                                        }
+                                    }
                             }
+                        } else {
+                            EmptyView()
+                        }
                     }
-                    
-                    
                 }
                 .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
                 .presentationDragIndicator(.visible)
@@ -95,7 +90,7 @@ struct ContentView: View {
         })
         .task(id: selectedMapItem) {
             route = nil
-            if let selectedMapItem {
+            if selectedMapItem != nil {
                 await reqestCalculateDirections()
             }
         }
@@ -104,7 +99,6 @@ struct ContentView: View {
     // MARK: Methods and functions
     private func search() async {
         do {
-            
             mapItems = try await performSearch(searchTerm: query, visibleRegion: visibleRegion)
             isSearching = false
             print(mapItems)
@@ -120,26 +114,19 @@ struct ContentView: View {
         if let selectedMapItem {
             let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
             do {
+                showPreview = true
+                print("Show preview is \(showPreview)")
                 return try await request.scene
+//                return nil
             } catch {
                 print("not available")
+                showPreview = false
+                print("Show preview is \(showPreview)")
                 return nil
             }
         } else {
             return nil
         }
-        
-        //        if let latitude = tappedLocation?.latitude, let longitude = tappedLocation?.longitude {
-        //            let sceneRequest = MKLookAroundSceneRequest(coordinate: .init(latitude: latitude, longitude: longitude))
-        //
-        //            do {
-        //                return try await sceneRequest.scene
-        //            } catch {
-        //                return nil
-        //            }
-        //        } else {
-        //            return nil
-        //        }
     }
     
     private func reqestCalculateDirections() async {
