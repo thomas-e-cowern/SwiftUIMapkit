@@ -20,6 +20,7 @@ struct ContentView: View {
     @State private var visibleRegion: MKCoordinateRegion?
     @State private var selectedMapItem: MKMapItem?
     @State private var displayMode: DisplayMode = .list
+    @State private var lookAroundScene: MKLookAroundScene?
     
     // MARK: - Body
     var body: some View {
@@ -43,6 +44,23 @@ struct ContentView: View {
                     case .detail:
                         SelectedPlaceDetailView(mapItem: $selectedMapItem)
                             .padding()
+                        LookAroundPreview(initialScene: lookAroundScene)
+                            .task(id: selectedMapItem) {
+                                let scene = await getScene(selectedMapItem: selectedMapItem)
+                                lookAroundScene = scene
+//                                lookAroundScene = nil
+//                                if let selectedMapItem {
+//                                    let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
+//                                    do {
+//                                        lookAroundScene = try? await request.scene
+//                                        
+//                                    } catch {
+//                                        print("not available")
+//                                    }
+//                                    
+//                                    
+//                                }
+                            }
                     }
                     
                     
@@ -82,6 +100,33 @@ struct ContentView: View {
             print(error.localizedDescription)
             isSearching = false
         }
+    }
+    
+    func getScene(selectedMapItem: MKMapItem?) async -> MKLookAroundScene? {
+        
+        if let selectedMapItem {
+            let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
+            do {
+                return try await request.scene
+            } catch {
+                print("not available")
+                return nil
+            }
+        } else {
+            return nil
+        }
+        
+        //        if let latitude = tappedLocation?.latitude, let longitude = tappedLocation?.longitude {
+        //            let sceneRequest = MKLookAroundSceneRequest(coordinate: .init(latitude: latitude, longitude: longitude))
+        //
+        //            do {
+        //                return try await sceneRequest.scene
+        //            } catch {
+        //                return nil
+        //            }
+        //        } else {
+        //            return nil
+        //        }
     }
 }
 
