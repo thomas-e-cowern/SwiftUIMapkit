@@ -39,3 +39,13 @@ func calculateDirections(from: MKMapItem, to: MKMapItem) async -> MKRoute? {
     
     return response?.routes.first
 }
+
+func makePhoneCall(phoneNumber: String) {
+    if let url = URL(string: "tel://\(phoneNumber)") {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        } else {
+            print("Device can not make phone call")
+        }
+    }
+}
