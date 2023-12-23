@@ -16,6 +16,7 @@
 		4DDDD58A2B3738A300C6B73A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5892B3738A300C6B73A /* LocationManager.swift */; };
 		4DDDD58D2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD58C2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift */; };
 		4DDDD5902B37448200C6B73A /* Restroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD58F2B37448200C6B73A /* Restroom.swift */; };
+		4DDDD5932B37471A00C6B73A /* RestroomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5922B37471A00C6B73A /* RestroomClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4DDDD5892B3738A300C6B73A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4DDDD58C2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		4DDDD58F2B37448200C6B73A /* Restroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restroom.swift; sourceTree = "<group>"; };
+		4DDDD5922B37471A00C6B73A /* RestroomClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		4DDDD5742B37307500C6B73A /* RestroomFinder */ = {
 			isa = PBXGroup;
 			children = (
+				4DDDD5912B37470C00C6B73A /* Clients */,
 				4DDDD58E2B37446400C6B73A /* Models */,
 				4DDDD58B2B373B0B00C6B73A /* Extensions */,
 				4DDDD5882B37389400C6B73A /* Managers */,
@@ -112,6 +115,14 @@
 				4DDDD58F2B37448200C6B73A /* Restroom.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4DDDD5912B37470C00C6B73A /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				4DDDD5922B37471A00C6B73A /* RestroomClient.swift */,
+			);
+			path = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DDDD5872B3735D300C6B73A /* PreviewData.swift in Sources */,
+				4DDDD5932B37471A00C6B73A /* RestroomClient.swift in Sources */,
 				4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */,
 				4DDDD58A2B3738A300C6B73A /* LocationManager.swift in Sources */,
 				4DDDD5902B37448200C6B73A /* Restroom.swift in Sources */,
