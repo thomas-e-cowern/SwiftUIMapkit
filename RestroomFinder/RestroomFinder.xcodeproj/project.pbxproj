@@ -14,6 +14,7 @@
 		4DDDD5852B37359000C6B73A /* ActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5842B37359000C6B73A /* ActionButtonsView.swift */; };
 		4DDDD5872B3735D300C6B73A /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5862B3735D300C6B73A /* PreviewData.swift */; };
 		4DDDD58A2B3738A300C6B73A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5892B3738A300C6B73A /* LocationManager.swift */; };
+		4DDDD58D2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD58C2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4DDDD5842B37359000C6B73A /* ActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsView.swift; sourceTree = "<group>"; };
 		4DDDD5862B3735D300C6B73A /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		4DDDD5892B3738A300C6B73A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4DDDD58C2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		4DDDD5742B37307500C6B73A /* RestroomFinder */ = {
 			isa = PBXGroup;
 			children = (
+				4DDDD58B2B373B0B00C6B73A /* Extensions */,
 				4DDDD5882B37389400C6B73A /* Managers */,
 				4DDDD5832B37357E00C6B73A /* Views */,
 				4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */,
@@ -90,6 +93,14 @@
 				4DDDD5892B3738A300C6B73A /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		4DDDD58B2B373B0B00C6B73A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DDDD58C2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 				4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */,
 				4DDDD58A2B3738A300C6B73A /* LocationManager.swift in Sources */,
 				4DDDD5762B37307500C6B73A /* RestroomFinderApp.swift in Sources */,
+				4DDDD58D2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift in Sources */,
 				4DDDD5852B37359000C6B73A /* ActionButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
