@@ -13,12 +13,28 @@ struct ContentView: View {
     @Environment(\.httpClient) private var restroomClient
     @State private var locationManager = LocationManager.shared
     @State private var restrooms: [Restroom] = []
+    @State private var selectedRestroom: Restroom?
     
     var body: some View {
         ZStack {
             Map {
                 ForEach(restrooms, id: \.id) { restroom in
-                    Marker(restroom.name, coordinate: restroom.coordinate)
+                    Annotation(restroom.name, coordinate: restroom.coordinate) {
+                        ZStack {
+                            Circle()
+                                .fill(.blue)
+                                .frame(width: 45)
+                            Text("🚽")
+                                .font(.largeTitle)
+                        }
+                        .scaleEffect(selectedRestroom == restroom ? 1.5 : 1.0)
+                        .onTapGesture {
+                            withAnimation {
+                                selectedRestroom = restroom
+                            }
+                        }
+                        .animation(.spring(duration: 0.25), value: selectedRestroom)
+                    }
                 }
                 
                 UserAnnotation()

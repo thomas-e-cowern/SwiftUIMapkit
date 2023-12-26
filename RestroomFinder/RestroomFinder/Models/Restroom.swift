@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-struct Restroom: Decodable {
+struct Restroom: Decodable, Equatable {
     let id: Int
     let name: String
     let street: String
