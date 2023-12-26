@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RestroomClient {
+struct RestroomClient: HTTPClient {
     
     private enum RestroomClientError: Error {
         case invalidResponse
