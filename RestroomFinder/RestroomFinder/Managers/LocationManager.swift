@@ -42,10 +42,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     static let shared = LocationManager()
     var error: LocationError? = nil
     
-    var region: MKCoordinateRegion = MKCoordinateRegion()
+    var region: MKCoordinateRegion?
     
     private override init() {
         super.init()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         self.manager.delegate = self
     }
 }

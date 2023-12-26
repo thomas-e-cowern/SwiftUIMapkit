@@ -6,27 +6,40 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     
     @Environment(\.httpClient) private var restroomClient
     @State private var locationManager = LocationManager.shared
+    @State private var restrooms: [Restroom] = []
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Map {
+                ForEach(restrooms, id: \.id) { restroom in
+                    Marker(restroom.name, coordinate: restroom.coordinate)
+                }
+                
+                UserAnnotation()
+            }
         }
-        .padding()
+        .task(id: locationManager.region) {
+            await loadRestrooms()
+        }
     }
     
-    func loadRestrooms() async {
-        guard let region =  locationManager.region else { return }
+    private func loadRestrooms() async {
+        
+        guard let region = locationManager.region else { return }
         let coordinates = region.center
         
-        restroomClient
+        do {
+            restrooms = try await restroomClient.fetchRestrooms(url: Constants.Urls.restroomsByLocation(latitude: coordinates.latitude, longitude: coordinates.longitude))
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
 }
 
