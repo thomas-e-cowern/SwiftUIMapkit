@@ -10,7 +10,7 @@ import Foundation
 struct MockRestroomClient: HTTPClient {
     
     func fetchRestrooms(url: URL) async throws -> [Restroom] {
-        return []
+        return PreviewData.load(resourceName: "restrooms")
     }
 
 }

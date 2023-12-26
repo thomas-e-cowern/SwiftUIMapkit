@@ -30,7 +30,3 @@ struct ActionButtons: View {
         }
     }
 }
-
-#Preview {
-    ActionButtons(mapItem: PreviewData.apple)
-}

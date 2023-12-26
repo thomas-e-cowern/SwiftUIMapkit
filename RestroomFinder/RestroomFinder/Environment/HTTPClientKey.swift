@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 private struct HTTPClientKey: EnvironmentKey {
-    static var defaultValue = RestroomClient()
+    static var defaultValue: HTTPClient = RestroomClient()
 }
 
 extension EnvironmentValues {
-    var httpClient: RestroomClient {
+    var httpClient: HTTPClient {
         get { self[HTTPClientKey.self] }
         set { self[HTTPClientKey.self] = newValue }
     }
