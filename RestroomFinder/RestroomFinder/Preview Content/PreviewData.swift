@@ -11,23 +11,12 @@ import Contacts
 
 struct PreviewData {
     
-    static var apple: MKMapItem {
-        
-        let coordinates = CLLocationCoordinate2D(latitude: 37.749, longitude: -122.4194)
-        
-        let addressDictionary: [String: Any] = [
-            CNPostalAddressStreetKey: "1 Infinite Loop",
-            CNPostalAddressCityKey: "Cupertino",
-            CNPostalAddressStateKey: "California",
-            CNPostalAddressPostalCodeKey: "95014"
-        ]
-        
-        let phoneNumber = "1-555-555-1212"
-        
-        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: addressDictionary)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = "Apple, Inc"
-        mapItem.phoneNumber = phoneNumber
-        return mapItem
+    static func load<T: Decodable>(resourceName: String) -> T {
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: "json") else {
+            fatalError("Resource \(resourceName) does not exist")
+        }
+
+        let data = try! Data(contentsOf: URL(filePath: path))
+        return try! JSONDecoder().decode(T.self, from: data)
     }
 }
