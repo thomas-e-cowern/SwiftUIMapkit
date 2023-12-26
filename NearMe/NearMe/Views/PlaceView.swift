@@ -71,11 +71,9 @@ struct PlaceView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.top, 10)
         .padding()
-//        .background(Color.gray.opacity(0.2))
         .clipShape(.rect)
-        .padding()
-        
     }
 }
 

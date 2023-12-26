@@ -26,6 +26,7 @@ struct SelectedPlaceDetailView: View {
                     mapItem = nil
                 }
         }
+        .padding(.top, 10)
     }
 }
 

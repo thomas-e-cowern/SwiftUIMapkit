@@ -12,7 +12,7 @@ struct ContentView: View {
     
     // MARK: - Properties
     @State private var query: String = ""
-    @State private var selectedDetent: PresentationDetent = .fraction(0.15)
+    @State private var selectedDetent: PresentationDetent = .fraction(0.20)
     @State private var locationManager = LocationManager.shared
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var isSearching: Bool = false
@@ -53,25 +53,26 @@ struct ContentView: View {
                         SelectedPlaceDetailView(mapItem: $selectedMapItem)
                             .padding()
                         
-                        if showPreview {
-                            if selectedDetent == .medium || selectedDetent == .large {
-                                if let selectedMapItem {
-                                    ActionButtons(mapItem: selectedMapItem)
-                                        .padding(.leading, 5)
-                                }
-                                LookAroundPreview(initialScene: lookAroundScene)
-                                    .task(id: selectedMapItem) {
-                                        if let scene = await getScene(selectedMapItem: selectedMapItem) {
-                                            lookAroundScene = scene
-                                        }
-                                    }
+                        
+                        if selectedDetent == .medium || selectedDetent == .large {
+                            if let selectedMapItem {
+                                ActionButtons(mapItem: selectedMapItem)
+                                    .padding(.leading, 5)
                             }
-                        } else {
-                            EmptyView()
+                            
+                            if let scene = lookAroundScene {
+                                LookAroundPreview(initialScene: scene)
+                                    .frame(height: 250)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .padding()
+                            } else {
+                                ContentUnavailableView("No preview available", systemImage: "eye.slash")
+                            }
                         }
+                        
                     }
                 }
-                .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
+                .presentationDetents([.fraction(0.20), .medium, .large], selection: $selectedDetent)
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
                 .presentationBackgroundInteraction(.enabled(upThrough: .medium))
@@ -80,6 +81,7 @@ struct ContentView: View {
         .onChange(of: selectedMapItem, {
             if selectedMapItem != nil {
                 displayMode = .detail
+                fetchLookAroundPreview()
             } else {
                 displayMode = .list
             }
@@ -121,7 +123,7 @@ struct ContentView: View {
                 showPreview = true
                 print("Show preview is \(showPreview)")
                 return try await request.scene
-//                return nil
+                //                return nil
             } catch {
                 print("not available")
                 showPreview = false
@@ -132,6 +134,16 @@ struct ContentView: View {
             return nil
         }
     }
+    
+    func fetchLookAroundPreview() {
+            if let selectedMapItem {
+                lookAroundScene = nil
+                Task {
+                    let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
+                    lookAroundScene = try? await request.scene
+                }
+            }
+        }
     
     private func reqestCalculateDirections() async {
         route = nil
