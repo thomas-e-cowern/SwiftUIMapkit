@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.httpClient) private var restroomClient
+    @State private var locationManager = LocationManager.shared
     
     var body: some View {
         VStack {
@@ -19,6 +20,13 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+    }
+    
+    func loadRestrooms() async {
+        guard let region =  locationManager.region else { return }
+        let coordinates = region.center
+        
+        restroomClient
     }
 }
 

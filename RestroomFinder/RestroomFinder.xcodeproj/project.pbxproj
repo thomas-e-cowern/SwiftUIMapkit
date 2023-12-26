@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DC800552B3B1E8B0099260E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC800542B3B1E8B0099260E /* Constants.swift */; };
 		4DDDD5762B37307500C6B73A /* RestroomFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */; };
 		4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5772B37307500C6B73A /* ContentView.swift */; };
 		4DDDD57A2B37307800C6B73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDD5792B37307800C6B73A /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DC800542B3B1E8B0099260E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4DDDD5722B37307500C6B73A /* RestroomFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestroomFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomFinderApp.swift; sourceTree = "<group>"; };
 		4DDDD5772B37307500C6B73A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DC800532B3B1E7C0099260E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4DC800542B3B1E8B0099260E /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		4DDDD5692B37307500C6B73A = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		4DDDD5742B37307500C6B73A /* RestroomFinder */ = {
 			isa = PBXGroup;
 			children = (
+				4DC800532B3B1E7C0099260E /* Utilities */,
 				4DDDD5942B37666C00C6B73A /* Environment */,
 				4DDDD5912B37470C00C6B73A /* Clients */,
 				4DDDD58E2B37446400C6B73A /* Models */,
@@ -211,6 +222,7 @@
 				4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */,
 				4DDDD58A2B3738A300C6B73A /* LocationManager.swift in Sources */,
 				4DDDD5902B37448200C6B73A /* Restroom.swift in Sources */,
+				4DC800552B3B1E8B0099260E /* Constants.swift in Sources */,
 				4DDDD5762B37307500C6B73A /* RestroomFinderApp.swift in Sources */,
 				4DDDD5962B37669100C6B73A /* HTTPClientKey.swift in Sources */,
 				4DDDD58D2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift in Sources */,
