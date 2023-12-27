@@ -11,6 +11,7 @@
 		4DC800572B3B64AD0099260E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC800562B3B64AD0099260E /* HTTPClient.swift */; };
 		4DC800592B3B65420099260E /* MockRestroomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC800582B3B65420099260E /* MockRestroomClient.swift */; };
 		4DC8005B2B3B65910099260E /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DC8005A2B3B65910099260E /* restrooms.json */; };
+		4DC8005D2B3C58840099260E /* MapCameraPosition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8005C2B3C58840099260E /* MapCameraPosition+Extensions.swift */; };
 		4DDDD5762B37307500C6B73A /* RestroomFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */; };
 		4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5772B37307500C6B73A /* ContentView.swift */; };
 		4DDDD57A2B37307800C6B73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDD5792B37307800C6B73A /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		4DC800562B3B64AD0099260E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4DC800582B3B65420099260E /* MockRestroomClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestroomClient.swift; sourceTree = "<group>"; };
 		4DC8005A2B3B65910099260E /* restrooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restrooms.json; sourceTree = "<group>"; };
+		4DC8005C2B3C58840099260E /* MapCameraPosition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapCameraPosition+Extensions.swift"; sourceTree = "<group>"; };
 		4DDDD5722B37307500C6B73A /* RestroomFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestroomFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomFinderApp.swift; sourceTree = "<group>"; };
 		4DDDD5772B37307500C6B73A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				4DDDD58C2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift */,
+				4DC8005C2B3C58840099260E /* MapCameraPosition+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				4DDDD5932B37471A00C6B73A /* RestroomClient.swift in Sources */,
 				4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */,
 				4DDDD58A2B3738A300C6B73A /* LocationManager.swift in Sources */,
+				4DC8005D2B3C58840099260E /* MapCameraPosition+Extensions.swift in Sources */,
 				4DDDD5902B37448200C6B73A /* Restroom.swift in Sources */,
 				4DC800552B3B1E8B0099260E /* Constants.swift in Sources */,
 				4DC800572B3B64AD0099260E /* HTTPClient.swift in Sources */,
