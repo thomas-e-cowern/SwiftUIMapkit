@@ -21,6 +21,8 @@ struct RestroomDetailView: View {
                     .font(.caption)
                 AmenitiesTextView(restroom: restroom)
                     .padding(.top, 10)
+                
+                ActionButtons(mapItem: restroom.mapItem)
             }
             .padding(.leading, 10)
             
@@ -84,6 +86,7 @@ struct AmenityTextView: View {
                 Text(text)
                 Image(systemName: "checkmark")
             }
+            .padding(.horizontal, 5)
             .background(Color.green)
         }
         

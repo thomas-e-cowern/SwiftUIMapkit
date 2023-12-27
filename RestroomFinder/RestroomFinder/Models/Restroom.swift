@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import Contacts
 
 struct Restroom: Decodable, Equatable, Identifiable {
     let id: Int
@@ -45,5 +46,20 @@ struct Restroom: Decodable, Equatable, Identifiable {
     
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+}
+
+extension Restroom {
+    var mapItem: MKMapItem {
+        let addressDictionary: [String: Any] = [
+            CNPostalAddressStreetKey: self.street,
+            CNPostalAddressCityKey: self.city,
+            CNPostalAddressStateKey: self.state
+        ]
+        
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = name
+        return mapItem
     }
 }
