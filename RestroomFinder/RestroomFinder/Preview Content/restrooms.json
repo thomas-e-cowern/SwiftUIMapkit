@@ -85,7 +85,7 @@
         "downvote": 0,
         "upvote": 0,
         "country": "US",
-        "changing_table": false,
+        "changing_table": true,
         "edit_id": 48016,
         "approved": true,
         "distance": 2.81286424055051,

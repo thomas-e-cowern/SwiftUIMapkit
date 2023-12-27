@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var restrooms: [Restroom] = []
     @State private var selectedRestroom: Restroom?
     @State private var visibleRegion: MKCoordinateRegion?
-    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
+    @State private var position: MapCameraPosition = .userLocation(fallback: .northHavenCT)
     
     var body: some View {
         ZStack {
@@ -51,10 +51,10 @@ struct ContentView: View {
         .onMapCameraChange({ context in
             visibleRegion = context.region
         })
-        .sheet(item: $selectedRestroom, content: { restroom in
+        .sheet(item: $selectedRestroom) { restroom in
             RestroomDetailView(restroom: restroom)
                 .presentationDetents([.fraction(0.25)])
-        })
+        }
         .overlay(alignment: .topLeading) {
             Button {
                 Task {
