@@ -42,11 +42,18 @@ struct ContentView: View {
                 UserAnnotation()
             }
         }
-        .task(id: visibleRegion) {
-            await loadRestrooms()
+        .task(id: locationManager.region) {
+             if let region = locationManager.region {
+                 visibleRegion = region
+                 await loadRestrooms()
+            }
         }
         .onMapCameraChange({ context in
             visibleRegion = context.region
+        })
+        .sheet(item: $selectedRestroom, content: { restroom in
+            RestroomDetailView(restroom: restroom)
+                .presentationDetents([.fraction(0.25)])
         })
         .overlay(alignment: .topLeading) {
             Button {
@@ -77,5 +84,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(\.httpClient, RestroomClient())
+        .environment(\.httpClient, MockRestroomClient())
 }

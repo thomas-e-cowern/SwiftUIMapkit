@@ -12,6 +12,7 @@
 		4DC800592B3B65420099260E /* MockRestroomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC800582B3B65420099260E /* MockRestroomClient.swift */; };
 		4DC8005B2B3B65910099260E /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DC8005A2B3B65910099260E /* restrooms.json */; };
 		4DC8005D2B3C58840099260E /* MapCameraPosition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8005C2B3C58840099260E /* MapCameraPosition+Extensions.swift */; };
+		4DC8005F2B3C6ABD0099260E /* RestroomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8005E2B3C6ABD0099260E /* RestroomDetailView.swift */; };
 		4DDDD5762B37307500C6B73A /* RestroomFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */; };
 		4DDDD5782B37307500C6B73A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDD5772B37307500C6B73A /* ContentView.swift */; };
 		4DDDD57A2B37307800C6B73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDD5792B37307800C6B73A /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		4DC800582B3B65420099260E /* MockRestroomClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestroomClient.swift; sourceTree = "<group>"; };
 		4DC8005A2B3B65910099260E /* restrooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restrooms.json; sourceTree = "<group>"; };
 		4DC8005C2B3C58840099260E /* MapCameraPosition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapCameraPosition+Extensions.swift"; sourceTree = "<group>"; };
+		4DC8005E2B3C6ABD0099260E /* RestroomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDetailView.swift; sourceTree = "<group>"; };
 		4DDDD5722B37307500C6B73A /* RestroomFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestroomFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDDD5752B37307500C6B73A /* RestroomFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomFinderApp.swift; sourceTree = "<group>"; };
 		4DDDD5772B37307500C6B73A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4DDDD5842B37359000C6B73A /* ActionButtonsView.swift */,
+				4DC8005E2B3C6ABD0099260E /* RestroomDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				4DDDD5762B37307500C6B73A /* RestroomFinderApp.swift in Sources */,
 				4DDDD5962B37669100C6B73A /* HTTPClientKey.swift in Sources */,
 				4DDDD58D2B373B4D00C6B73A /*  MKCoordinateRegion+Extensions.swift in Sources */,
+				4DC8005F2B3C6ABD0099260E /* RestroomDetailView.swift in Sources */,
 				4DDDD5852B37359000C6B73A /* ActionButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
